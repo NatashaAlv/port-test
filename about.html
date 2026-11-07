@@ -6,47 +6,48 @@
     <title>About</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="topbar">
-      <a href="index.html" class="brand">NOVA</a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="home.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html" class="active">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </header>
+  <body class="about-page">
+    <a href="home.html" class="about-exit" aria-label="Exit to home">
+      <span>Exit</span>
+      <img src="img/door.jpg" alt="Exit door" />
+    </a>
 
-    <main class="page-content">
-      <section class="page-hero split-hero">
-        <div>
-          <p class="eyebrow">ABOUT</p>
-          <h1>I build digital experiences with personality.</h1>
-        </div>
-        <div class="profile-block">
-          <div class="profile-placeholder"></div>
-        </div>
+    <main class="about-template" aria-label="About page template">
+      <section class="about-intro">
+        <p class="about-eyebrow">ABOUT THIS SPACE</p>
+        <h1>Placeholder heading goes here.</h1>
+        <p class="about-lede">
+          This is a rough introduction area for a short personal statement,
+          project overview, or any other text you would like to add later.
+        </p>
       </section>
 
-      <section class="details-layout">
-        <article class="info-card wide-card">
-          <h3>Bio</h3>
+      <section class="about-content">
+        <article class="about-card">
+          <p class="about-eyebrow">SECTION ONE</p>
+          <h2>A little about me</h2>
           <p>
-            I’m a creative developer focused on clean interfaces, meaningful interactions,
-            and practical design systems. I like work that feels both thoughtful and fun.
+            Add a few sentences here about your background, interests, and
+            creative process. This paragraph is placeholder text for now.
           </p>
         </article>
 
-        <article class="info-card wide-card">
-          <h3>Skills</h3>
-          <div class="skill-list">
-            <span>Design</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Branding</span>
-            <span>UX</span>
-          </div>
+        <article class="about-card">
+          <p class="about-eyebrow">SECTION TWO</p>
+          <h2>What I do</h2>
+          <p>
+            Use this space to describe your skills, services, or the kinds of
+            experiences you enjoy making.
+          </p>
+        </article>
+
+        <article class="about-card about-card-wide">
+          <p class="about-eyebrow">SECTION THREE</p>
+          <h2>More details</h2>
+          <p>
+            This wider block can hold a longer biography, a list of goals, or
+            any additional information you want visitors to know.
+          </p>
         </article>
       </section>
     </main>
@@ -54,4 +55,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-

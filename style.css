@@ -1,4 +1,5 @@
 html, body {
+  /* Remove the browser's default page spacing. */
   margin: 0;
   width: 100%;
   min-height: 100%;
@@ -12,6 +13,7 @@ html, body {
 }
 
 img {
+  /* Keep images inside their containers. */
   display: block;
   max-width: 100%;
 }
@@ -20,7 +22,9 @@ body {
   min-height: 100vh;
 }
 
-/* Landing page styles are deliberately isolated to this page only. */
+/* =========================
+   Landing page: index.html
+   ========================= */
 body.landing-page {
   position: relative;
   min-height: 100vh;
@@ -122,6 +126,19 @@ body.landing-page .door-link {
   z-index: 3;
 }
 
+body.landing-page .door-link span {
+  display: block;
+  width: max-content;
+  margin: 0 auto 0.6rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(13, 18, 27, 0.45);
+  color: #f5f1e8;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 body.landing-page .door {
   width: clamp(220px, 20vw, 320px);
   height: auto;
@@ -151,6 +168,9 @@ body.landing-page .ground-names span {
   padding: 0.3rem 0.4rem;
 }
 
+/* ====================
+   Home page: home.html
+   ==================== */
 body.home-page {
   position: relative;
   min-height: 100vh;
@@ -171,7 +191,7 @@ body.home-page::after {
   height: 150px;
   background-image: url('img/ground.jpg');
   background-repeat: repeat-x;
-  background-position: bottom center;
+  background-position: var(--ground-offset, 0px) bottom;
   background-size: auto 100%;
   z-index: 0;
 }
@@ -218,11 +238,11 @@ body.home-page .scroll-stage {
   position: relative;
   z-index: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: clamp(2rem, 4vw, 5rem);
   width: 100%;
   min-height: calc(100vh - 72px);
-  padding: 3rem 8vw 8rem;
+  padding: 3rem 8vw 100px;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x proximity;
@@ -240,11 +260,12 @@ body.home-page .panel {
 
 body.home-page .door-panel {
   position: relative;
+  align-items: flex-end;
 }
 
 body.home-page .door-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -269,7 +290,7 @@ body.home-page .door-card span {
 }
 
 body.home-page .home-fox-wrap {
-  position: absolute;
+  position: fixed;
   left: 8vw;
   bottom: 135px;
   z-index: 2;
@@ -281,25 +302,354 @@ body.home-page .home-fox {
   display: block;
 }
 
-.topbar,
-.main-nav,
-.scroll-stage,
-.panel,
-.page-content,
-.card-grid,
-.details-layout,
-.contact-grid,
-.profile-placeholder,
-.skill-list,
-.form-card,
-label,
-input,
-textarea,
-.btn,
-.panel-button {
-  display: revert;
+/* ========================
+   Projects page: projects.html
+   ======================== */
+body.projects-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url('img/stars.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+body.projects-page .topbar {
+  position: relative;
+  z-index: 2;
+}
+
+body.projects-page .projects-scene {
+  position: relative;
+  min-height: calc(100vh - 60px);
+}
+
+body.projects-page .projects-fox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: clamp(130px, 15vw, 210px);
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+body.projects-page .project-doors {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(78vw, 850px);
+  height: min(78vw, 850px);
+  transform: translate(-50%, -50%);
+}
+
+body.projects-page .project-door {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(100px, 12vw, 170px);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #f5f1e8;
+  text-decoration: none;
+  transform: translate(-50%, -50%);
+}
+
+body.projects-page .project-door span {
+  order: -1;
+  margin-bottom: 0.6rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(13, 18, 27, 0.45);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+body.projects-page .project-door img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.5));
+}
+
+body.projects-page .project-door:nth-child(1) {
+  top: 4%;
+  left: 50%;
+}
+
+body.projects-page .project-door:nth-child(2) {
+  top: 35%;
+  left: 95%;
+}
+
+body.projects-page .project-door:nth-child(3) {
+  top: 88%;
+  left: 78%;
+}
+
+body.projects-page .project-door:nth-child(4) {
+  top: 88%;
+  left: 22%;
+}
+
+body.projects-page .project-door:nth-child(5) {
+  top: 35%;
+  left: 5%;
+}
+
+/* ====================
+   About page: about.html
+   ==================== */
+body.about-page {
+  min-height: 100vh;
+  background: #0c1220;
+}
+
+body.about-page .about-exit {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1;
+  width: clamp(70px, 8vw, 110px);
+  color: #f5f1e8;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.65rem;
+}
+
+body.about-page .about-exit span {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+body.about-page .about-exit img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.45));
+}
+
+body.about-page .about-template {
+  min-height: 100vh;
+  padding: 8rem 10vw 5rem;
+  color: #f5f1e8;
+}
+
+body.about-page .about-intro {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+body.about-page .about-eyebrow {
+  margin: 0 0 0.8rem;
+  color: rgba(245, 241, 232, 0.65);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body.about-page .about-intro h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+body.about-page .about-lede {
+  max-width: 560px;
+  margin: 1.5rem auto 0;
+  color: rgba(245, 241, 232, 0.78);
+  line-height: 1.7;
+}
+
+body.about-page .about-content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+body.about-page .about-card {
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(13, 18, 27, 0.5);
+}
+
+body.about-page .about-card-wide {
+  grid-column: 1 / -1;
+}
+
+body.about-page .about-card h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+body.about-page .about-card p:last-child {
+  margin: 0;
+  color: rgba(245, 241, 232, 0.78);
+  line-height: 1.7;
+}
+
+/* =======================
+   Contact page: contact.html
+   ======================= */
+body.contact-page {
+  min-height: 100vh;
+  background: #0c1220;
+}
+
+body.contact-page .contact-exit {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 1;
+  width: clamp(70px, 8vw, 110px);
+  color: #f5f1e8;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.65rem;
+}
+
+body.contact-page .contact-exit span {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+body.contact-page .contact-exit img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.45));
+}
+
+body.contact-page .contact-template {
+  min-height: 100vh;
+  padding: 8rem 10vw 5rem;
+  color: #f5f1e8;
+}
+
+body.contact-page .contact-intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+body.contact-page .contact-eyebrow {
+  margin: 0 0 0.8rem;
+  color: rgba(245, 241, 232, 0.65);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body.contact-page .contact-intro h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+body.contact-page .contact-intro > p:last-child {
+  max-width: 560px;
+  margin: 1.5rem auto 0;
+  color: rgba(245, 241, 232, 0.78);
+  line-height: 1.7;
+}
+
+body.contact-page .contact-content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+body.contact-page .contact-card {
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(13, 18, 27, 0.5);
+}
+
+body.contact-page .contact-card h2 {
+  margin: 0 0 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+body.contact-page .contact-card > p:not(.contact-eyebrow) {
+  color: rgba(245, 241, 232, 0.78);
+  line-height: 1.7;
+}
+
+body.contact-page .contact-form {
+  display: grid;
+  gap: 1rem;
+}
+
+body.contact-page .contact-form .contact-eyebrow {
+  margin-bottom: 0;
+}
+
+body.contact-page .contact-form label {
+  display: grid;
+  gap: 0.4rem;
+  color: rgba(245, 241, 232, 0.78);
+  font-size: 0.8rem;
+}
+
+body.contact-page .contact-form input,
+body.contact-page .contact-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(5, 9, 17, 0.45);
+  color: #f5f1e8;
+  font: inherit;
+}
+
+body.contact-page .contact-form button {
+  justify-self: start;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.12);
+  color: #f5f1e8;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Small-screen layout for the editable pages. */
+@media (max-width: 700px) {
+  body.about-page .about-template {
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  body.about-page .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  body.about-page .about-card-wide {
+    grid-column: auto;
+  }
+
+  body.contact-page .contact-template {
+    padding: 7rem 1.5rem 3rem;
+  }
+
+  body.contact-page .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Home page adjustments for smaller screens. */
 @media (max-width: 800px) {
   body.home-page .topbar {
     flex-direction: column;
@@ -314,7 +664,7 @@ textarea,
   }
 
   body.home-page .scroll-stage {
-    padding: 2rem 5vw 7rem;
+    padding: 2rem 5vw 100px;
     gap: 1.5rem;
   }
 
@@ -328,49 +678,27 @@ textarea,
     bottom: 120px;
   }
 
-  .landing-scene {
+  body.landing-page .landing-scene {
     padding-top: 2.5rem;
   }
 
-  .floating-words {
+  body.landing-page .floating-words {
     gap: 0.5rem;
     font-size: 0.7rem;
     letter-spacing: 0.05em;
   }
 
-  .scene-objects {
+  body.landing-page .scene-objects {
     min-height: 260px;
   }
 
-  .door-link {
+  body.landing-page .door-link {
     right: 12%;
   }
 
-  .ground-names {
+  body.landing-page .ground-names {
     bottom: 40px;
     gap: 0.8rem 1.2rem;
     font-size: 0.7rem;
   }
 }
-
-
-@media (max-width: 800px) {
-  .landing-shell,
-  .panel,
-  .card-grid,
-  .details-layout,
-  .contact-grid,
-  .split-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .panel {
-    min-height: auto;
-  }
-
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-

@@ -6,45 +6,46 @@
     <title>Contact</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="topbar">
-      <a href="index.html" class="brand">NOVA</a>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="home.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
-      </nav>
-    </header>
+  <body class="contact-page">
+    <a href="home.html" class="contact-exit" aria-label="Exit to home">
+      <span>Exit</span>
+      <img src="img/door.jpg" alt="Exit door" />
+    </a>
 
-    <main class="page-content contact-page">
-      <section class="page-hero">
-        <p class="eyebrow">CONTACT</p>
-        <h1>Let’s make something great.</h1>
+    <main class="contact-template" aria-label="Contact page template">
+      <section class="contact-intro">
+        <p class="contact-eyebrow">GET IN TOUCH</p>
+        <h1>Placeholder contact heading.</h1>
+        <p>
+          Add a friendly invitation here for visitors who would like to reach
+          out about a project, collaboration, or general question.
+        </p>
       </section>
 
-      <section class="contact-grid">
-        <article class="info-card">
-          <h3>Get in touch</h3>
+      <section class="contact-content">
+        <article class="contact-card">
+          <p class="contact-eyebrow">CONTACT DETAILS</p>
+          <h2>Placeholder information</h2>
           <p>Email: hello@example.com</p>
-          <p>Instagram: @yourhandle</p>
           <p>Location: Somewhere creative</p>
+          <p>Social: @placeholder</p>
         </article>
 
-        <form class="info-card form-card">
+        <form class="contact-card contact-form">
+          <p class="contact-eyebrow">SEND A MESSAGE</p>
           <label>
             Name
-            <input type="text" placeholder="Your name" />
+            <input type="text" placeholder="Placeholder name" />
           </label>
           <label>
             Email
-            <input type="email" placeholder="you@example.com" />
+            <input type="email" placeholder="placeholder@example.com" />
           </label>
           <label>
             Message
-            <textarea rows="5" placeholder="Tell me about your project"></textarea>
+            <textarea rows="5" placeholder="Placeholder message"></textarea>
           </label>
-          <button type="submit" class="btn primary">Send</button>
+          <button type="submit">Placeholder send</button>
         </form>
       </section>
     </main>
@@ -52,4 +53,3 @@
     <script src="script.js"></script>
   </body>
 </html>
-
