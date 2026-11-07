@@ -326,7 +326,7 @@ body.projects-page .projects-scene {
 
 body.projects-page .projects-fox {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 70px);
   left: 50%;
   z-index: 1;
   width: clamp(130px, 15vw, 210px);
@@ -336,10 +336,10 @@ body.projects-page .projects-fox {
 
 body.projects-page .project-doors {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 70px);
   left: 50%;
-  width: min(78vw, 850px);
-  height: min(78vw, 850px);
+  width: min(68vw, 700px);
+  height: min(68vw, 700px);
   transform: translate(-50%, -50%);
 }
 
@@ -377,28 +377,28 @@ body.projects-page .project-door img {
 }
 
 body.projects-page .project-door:nth-child(1) {
-  top: 4%;
+  top: 8%;
   left: 50%;
 }
 
 body.projects-page .project-door:nth-child(2) {
-  top: 35%;
-  left: 95%;
+  top: 32%;
+  left: 92%;
 }
 
 body.projects-page .project-door:nth-child(3) {
-  top: 88%;
-  left: 78%;
+  top: 84%;
+  left: 76%;
 }
 
 body.projects-page .project-door:nth-child(4) {
-  top: 88%;
-  left: 22%;
+  top: 84%;
+  left: 24%;
 }
 
 body.projects-page .project-door:nth-child(5) {
-  top: 35%;
-  left: 5%;
+  top: 32%;
+  left: 8%;
 }
 
 /* ====================
