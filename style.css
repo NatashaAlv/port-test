@@ -1,1 +1,376 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+  color: #f3f3f3;
+  background: #0c1220;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Landing page styles are deliberately isolated to this page only. */
+body.landing-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url('img/stars.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body.landing-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 170px;
+  background-image: url('img/ground.jpg');
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: auto 100%;
+  z-index: 0;
+}
+
+body.landing-page .landing-scene {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 3rem 2rem 9rem;
+}
+
+body.landing-page .hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body.landing-page .hero-copy h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: 0.12em;
+  color: #f8f8f8;
+  text-transform: uppercase;
+}
+
+body.landing-page .floating-words {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem 1.2rem;
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.landing-page .floating-words span {
+  display: inline-block;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(11, 18, 32, 0.35);
+}
+
+body.landing-page .scene-objects {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  min-height: 340px;
+}
+
+body.landing-page .fox-wrap,
+body.landing-page .door-link {
+  position: absolute;
+  bottom: 170px;
+}
+
+body.landing-page .fox-wrap {
+  left: 36%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+body.landing-page .fox {
+  width: clamp(120px, 13vw, 180px);
+  height: auto;
+  display: block;
+}
+
+body.landing-page .door-link {
+  right: 12%;
+  z-index: 3;
+}
+
+body.landing-page .door {
+  width: clamp(220px, 20vw, 320px);
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+body.landing-page .ground-names {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 52px;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  padding: 0 2rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+body.landing-page .ground-names span {
+  display: inline-block;
+  padding: 0.3rem 0.4rem;
+}
+
+body.home-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-image: url('img/forest.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #f5f1e8;
+}
+
+body.home-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 150px;
+  background-image: url('img/ground.jpg');
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: auto 100%;
+  z-index: 0;
+}
+
+body.home-page .topbar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem 0;
+  background: rgba(9, 12, 18, 0.28);
+  backdrop-filter: blur(4px);
+}
+
+body.home-page .brand,
+body.home-page .main-nav a {
+  color: #f2efe7;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+}
+
+body.home-page .brand {
+  font-weight: 700;
+}
+
+body.home-page .main-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+body.home-page .main-nav a {
+  opacity: 0.8;
+}
+
+body.home-page .main-nav a.active {
+  opacity: 1;
+  color: #fff4da;
+}
+
+body.home-page .scroll-stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 5rem);
+  width: 100%;
+  min-height: calc(100vh - 72px);
+  padding: 3rem 8vw 8rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+}
+
+body.home-page .panel {
+  flex: 0 0 60vw;
+  min-width: 280px;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: center;
+}
+
+body.home-page .door-panel {
+  position: relative;
+}
+
+body.home-page .door-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #f5f1e8;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.9rem;
+}
+
+body.home-page .door-art {
+  width: clamp(150px, 17vw, 240px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.45));
+}
+
+body.home-page .door-card span {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  background: rgba(13, 18, 27, 0.32);
+}
+
+body.home-page .home-fox-wrap {
+  position: absolute;
+  left: 8vw;
+  bottom: 135px;
+  z-index: 2;
+}
+
+body.home-page .home-fox {
+  width: clamp(110px, 11vw, 180px);
+  height: auto;
+  display: block;
+}
+
+.topbar,
+.main-nav,
+.scroll-stage,
+.panel,
+.page-content,
+.card-grid,
+.details-layout,
+.contact-grid,
+.profile-placeholder,
+.skill-list,
+.form-card,
+label,
+input,
+textarea,
+.btn,
+.panel-button {
+  display: revert;
+}
+
+@media (max-width: 800px) {
+  body.home-page .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    padding-top: 1rem;
+  }
+
+  body.home-page .main-nav {
+    gap: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  body.home-page .scroll-stage {
+    padding: 2rem 5vw 7rem;
+    gap: 1.5rem;
+  }
+
+  body.home-page .panel {
+    flex-basis: 70vw;
+    min-height: 340px;
+  }
+
+  body.home-page .home-fox-wrap {
+    left: 6vw;
+    bottom: 120px;
+  }
+
+  .landing-scene {
+    padding-top: 2.5rem;
+  }
+
+  .floating-words {
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+
+  .scene-objects {
+    min-height: 260px;
+  }
+
+  .door-link {
+    right: 12%;
+  }
+
+  .ground-names {
+    bottom: 40px;
+    gap: 0.8rem 1.2rem;
+    font-size: 0.7rem;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .landing-shell,
+  .panel,
+  .card-grid,
+  .details-layout,
+  .contact-grid,
+  .split-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    min-height: auto;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
